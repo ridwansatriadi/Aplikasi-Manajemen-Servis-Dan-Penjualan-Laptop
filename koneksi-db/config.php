@@ -60,6 +60,47 @@ class Database
         }
         return $hasil;
     }
+    function tampil_status_servis()
+    {
+        $data = mysqli_query($this->koneksi, " SELECT * FROM tb_status_servis");
+        while ($dat = mysqli_fetch_array($data)) {
+            $hasil[] = $dat;
+        }
+        return $hasil;
+    }
+    
+    function tampil_transaksi_penjualan()
+    {
+        $data = mysqli_query($this->koneksi, " SELECT * FROM tb_transaksi_penjualan");
+        while ($dat = mysqli_fetch_array($data)) {
+            $hasil[] = $dat;
+        }
+        return $hasil;
+    }
+    function tampil_transaksi_servis()
+    {
+        $data = mysqli_query($this->koneksi, " SELECT * FROM tb_transaksi_servis");
+        while ($dat = mysqli_fetch_array($data)) {
+            $hasil[] = $dat;
+        }
+        return $hasil;
+    }
+    function tampil_piutang()
+    {
+        $data = mysqli_query($this->koneksi, " SELECT * FROM tb_transaksi_piutang");
+        while ($dat = mysqli_fetch_array($data)) {
+            $hasil[] = $dat;
+        }
+        return $hasil;
+    }
+    function tampil_laporan()
+    {
+        $data = mysqli_query($this->koneksi, " SELECT * FROM tb_laporan");
+        while ($dat = mysqli_fetch_array($data)) {
+            $hasil[] = $dat;
+        }
+        return $hasil;
+    }
     
 
     // public function tambah($nama, $stok, $harga_beli, $harga_jual)
