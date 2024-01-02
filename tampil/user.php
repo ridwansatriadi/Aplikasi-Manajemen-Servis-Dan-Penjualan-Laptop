@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>Kategori Barang</title>
+<title>Data User</title>
 </head>
 
 <body>
@@ -13,27 +13,35 @@
         $db = new Database();
         ?>
        
-        <h2>Data Kategori Barang</h2>
+        <h2>Data User</h2>
 
-        <a href="../form-tambah-data/input-kategori-barang.php">Tambah Kategori Barang</a>
+        <a href="../form-tambah-data/input-user.php">Tambah Data User</a>
         <br>
         <br>
         <table border="1">
             <tr>
                 <th>No</th>
-                <th>Nama Kategori</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Role</th>
                 <th>Opsi</th>
             </tr>
             <?php
             $data = 1;
-            foreach ($db->tampil_kategori_barang() as $x) {
+            foreach ($db->tampil_user() as $x) {
                 ?>
                 <tr>
                     <td>
                         <?php echo $data++; ?>
                     </td>
                     <td>
-                        <?php echo $x['Nama_Kategori']; ?>
+                        <?php echo $x['Username']; ?>
+                    </td>
+                    <td>
+                        <?php echo $x['Password']; ?>
+                    </td>
+                    <td>
+                        <?php echo $x['Role']; ?>
                     </td>
                     <!-- <td>
                         <a href="edit.php?id=<?php echo $x['id']; ?>&aksi=edit">Edit</a>
