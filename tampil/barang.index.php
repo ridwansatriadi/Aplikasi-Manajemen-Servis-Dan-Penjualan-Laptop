@@ -15,14 +15,14 @@
        
         <h2>Data Barang</h2>
 
-        <a href="input-barang.php">Tambah Data Barang</a>
+        <a href="../form-tambah-data/input-barang.php">Tambah Data Barang</a>
         <br>
         <br>
         <table border="1">
             <tr>
                 <th>No</th>
                 <th>Nama Barang</th>
-                <th>Kategori</th>
+                <th>ID Kategori</th>
                 <th>Harga Modal</th>
                 <th>Harga Jual</th>
                 <th>Stok</th>
@@ -40,7 +40,7 @@
                         <?php echo $x['Nama_Barang']; ?>
                     </td>
                     <td>
-                        <?php echo $x['ID_Kategori']; ?>
+                        <?php echo $x['Id_Kategori']; ?>
                     </td>
                     <td>
                         <?php echo $x['Harga_Modal']; ?>

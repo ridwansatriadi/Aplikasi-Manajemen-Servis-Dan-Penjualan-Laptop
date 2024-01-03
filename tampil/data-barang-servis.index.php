@@ -15,7 +15,7 @@
        
         <h2>Data Barang Servis</h2>
 
-        <a href="input-data-barang-servis.php">Tambah Data Barang Servis</a>
+        <a href="../form-tambah-data/input-data-barang-servis.php">Tambah Data Barang Servis</a>
         <br>
         <br>
         <table border="1">

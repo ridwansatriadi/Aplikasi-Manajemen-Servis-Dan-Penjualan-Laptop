@@ -12,6 +12,7 @@ class Database
         $this->koneksi = mysqli_connect($this->host, $this->user, $this->pass, $this->db);
     }
 
+// Tampil Data
     function tampil_user()
     {
         $data = mysqli_query($this->koneksi, " SELECT * FROM tb_user");
@@ -110,6 +111,7 @@ class Database
         return $hasil;
     }
     
+    // tambah data
 
     public function tambah_user($Username, $Password, $Role, )
     {
@@ -120,6 +122,16 @@ class Database
     {
         mysqli_query($this->koneksi, "INSERT INTO `tb_kategori_barang`(`Nama_Kategori`) 
 		VALUES ('$Nama_Kategori')");
+    }
+    public function tambah_barang($Nama_Barang, $Id_Kategori, $Harga_Modal, $Harga_Jual, $Stok )
+    {
+        mysqli_query($this->koneksi, "INSERT INTO `tb_barang`(`Nama_Barang`, `Id_Kategori`, `Harga_Modal`, `Harga_Jual`, `stok`) 
+		VALUES ('$Nama_Barang', '$Id_Kategori', '$Harga_Modal', '$Harga_Jual', '$Stok')");
+    }
+    public function tambah_data_barang_servis($Serial_Barang, $Tipe_Barang )
+    {
+        mysqli_query($this->koneksi, "INSERT INTO `tb_data_barang_servis`(`Serial_Barang`, `Tipe_Barang`) 
+		VALUES ('$Serial_Barang', '$Tipe_Barang')");
     }
 
     // public function update($id, $nama, $stok, $harga_beli, $harga_jual)
