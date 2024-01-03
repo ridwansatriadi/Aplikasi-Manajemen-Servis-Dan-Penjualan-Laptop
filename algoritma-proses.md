@@ -1,4 +1,4 @@
- algoritma servis-laptop
+ # algoritma servis-laptop
 
 memperbaiki strukturr database *
 update database *

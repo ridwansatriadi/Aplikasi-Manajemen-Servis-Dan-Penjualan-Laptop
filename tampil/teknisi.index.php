@@ -15,7 +15,7 @@
        
         <h2>Data Teknisi</h2>
 
-        <a href="input-teknisi.php">Tambah Data Teknisi</a>
+        <a href="../form-tambah-data/input-teknisi.php">Tambah Data Teknisi</a>
         <br>
         <br>
         <table border="1">

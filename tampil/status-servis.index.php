@@ -15,7 +15,7 @@
        
         <h2>Data Status Servis</h2>
 
-        <a href="input-status-servis.php">Tambah Data Status Servis</a>
+        <a href="../form-tambah-data/input-status-servis.php">Tambah Data Status Servis</a>
         <br>
         <br>
         <table border="1">

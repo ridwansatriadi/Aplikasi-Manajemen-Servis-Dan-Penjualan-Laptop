@@ -15,7 +15,7 @@
        
         <h2>Data Operator Sistem</h2>
 
-        <a href="input-operator-sistem.php">Tambah Data Operator Sistem</a>
+        <a href="../form-tambah-data/input-operator-sistem.php">Tambah Data Operator Sistem</a>
         <br>
         <br>
         <table border="1">

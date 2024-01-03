@@ -133,6 +133,26 @@ class Database
         mysqli_query($this->koneksi, "INSERT INTO `tb_data_barang_servis`(`Serial_Barang`, `Tipe_Barang`) 
 		VALUES ('$Serial_Barang', '$Tipe_Barang')");
     }
+    public function tambah_pelanggan($Nama_Pelanggan, $Alamat, $Kontak )
+    {
+        mysqli_query($this->koneksi, "INSERT INTO `tb_pelanggan`(`Nama_Pelanggan`, `Alamat`, `Kontak`) 
+		VALUES ('$Nama_Pelanggan', '$Alamat', '$Kontak')");
+    }
+    public function tambah_teknisi($Nama_Teknisi, $Almat, $no_telpon )
+    {
+        mysqli_query($this->koneksi, "INSERT INTO `tb_teknisi`(`Nama_Teknisi`, `Almat`, `no_telpon`) 
+		VALUES ('$Nama_Teknisi', '$Almat', '$no_telpon')");
+    }
+    public function tambah_operator_sistem($Nama, $Username, $Level, $Login_Terakhir)
+    {
+        mysqli_query($this->koneksi, "INSERT INTO `tb_operator_sistem`(`Nama`, `Username`, `Level`, `Login_Terakhir`) 
+		VALUES ('$Nama', '$Username', '$Level', '$Login_Terakhir')");
+    }
+    public function tambah_status_servis($Status)
+    {
+        mysqli_query($this->koneksi, "INSERT INTO `tb_status_servis`(`Status`) 
+		VALUES ('$Status')");
+    }
 
     // public function update($id, $nama, $stok, $harga_beli, $harga_jual)
 	// {

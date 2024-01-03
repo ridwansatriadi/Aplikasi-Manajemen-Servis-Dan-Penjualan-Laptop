@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>Data Barang</title>
+<title>Data Pelanggan</title>
 </head>
 
 <body>
@@ -13,9 +13,9 @@
         $db = new Database();
         ?>
        
-        <h2>Data Barang</h2>
+        <h2>Data Pelanggan</h2>
 
-        <a href="input-barang.php">Tambah Data Barang</a>
+        <a href="../form-tambah-data/input-pelanggan.php">Tambah Data Pelanggan</a>
         <br>
         <br>
         <table border="1">
