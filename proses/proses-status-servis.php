@@ -7,12 +7,13 @@ if ($aksi == "tambah") {
     $db->tambah_status_servis($_POST['Status']);
     header("location:../tampil/status-servis.index.php");
 
-    // }elseif($aksi == 'update'){
-// $db->update($_POST['id'], $_POST['nama'],$_POST['fakultas'],$_POST['prodi'],$_POST['nim'],$_POST['semester']);
-// header("location:tampil.php");
+} elseif ($aksi == 'update') {
+    $db->update_status_servis($_POST['ID_Status'], $_POST['Status']);
+    header("location:../tampil/status-servis.index.php");
 
-    // }elseif($aksi == 'hapus'){
-// $db->delete($_GET['id']);
-// header("location:tampil.php");
+} elseif ($aksi == 'hapus') {
+    $ID_Status = $_GET['id'];
+    $db->delete_status_servis($_GET['id']);
+    header("location:../tampil/status-servis.index.php");
 }
 ?>

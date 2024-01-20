@@ -36,7 +36,7 @@ Kontak (VARCHAR(20))
 Tabel Teknisi (tb_teknisi):
 ID_Teknisi (INT, Primary Key)
 Nama_Teknisi (VARCHAR(100))
-Alamat (VARCHAR(255))
+Almat (VARCHAR(255))
 no_telpon (VARCHAR(20))
 
 Tabel Operator Sistem (tb_operator_sistem):
@@ -44,7 +44,7 @@ ID_Operator (INT, Primary Key)
 Nama (VARCHAR(100))
 Username (VARCHAR(50))
 Level (VARCHAR(20))
-engkap (DATETIME)
+Login_Terakhir (DATETIME)
 
 Tabel Status Servis (tb_status_servis):
 ID_Status (INT, Primary Key)

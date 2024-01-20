@@ -7,12 +7,13 @@ if ($aksi == "tambah") {
     $db->tambah_kategori_barang($_POST['Nama_Kategori']);
     header("location:../tampil/kategori-barang.index.php");
 
-    // }elseif($aksi == 'update'){
-// $db->update($_POST['id'], $_POST['nama'],$_POST['fakultas'],$_POST['prodi'],$_POST['nim'],$_POST['semester']);
-// header("location:tampil.php");
+} elseif ($aksi == 'update') {
+    $db->update_kategori_barang($_POST['ID_Kategori'], $_POST['Nama_Kategori']);
+    header("location:../tampil/kategori-barang.index.php");
 
-    // }elseif($aksi == 'hapus'){
-// $db->delete($_GET['id']);
-// header("location:tampil.php");
+} elseif ($aksi == 'hapus') {
+    $ID_Kategori = $_GET['id'];
+    $db->delete_kategori_barang($_GET['id']);
+    header("location:../tampil/kategori-barang.index.php");
 }
 ?>

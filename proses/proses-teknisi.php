@@ -7,12 +7,13 @@ if ($aksi == "tambah") {
     $db->tambah_teknisi($_POST['Nama_Teknisi'], $_POST['Almat'], $_POST['no_telpon']);
     header("location:../tampil/teknisi.index.php");
 
-    // }elseif($aksi == 'update'){
-// $db->update($_POST['id'], $_POST['nama'],$_POST['fakultas'],$_POST['prodi'],$_POST['nim'],$_POST['semester']);
-// header("location:tampil.php");
+} elseif ($aksi == 'update') {
+    $db->update_teknisi($_POST['ID_Teknisi'], $_POST['Nama_Teknisi'], $_POST['Almat'], $_POST['no_telpon']);
+    header("location:../tampil/teknisi.index.php");
 
-    // }elseif($aksi == 'hapus'){
-// $db->delete($_GET['id']);
-// header("location:tampil.php");
+} elseif ($aksi == 'hapus') {
+    $ID_Teknisi = $_GET['id'];
+    $db->delete_teknisi($_GET['id']);
+    header("location:../tampil/teknisi.index.php");
 }
 ?>

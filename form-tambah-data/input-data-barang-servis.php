@@ -1,32 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include("../layout/app.php");
+include("../koneksi-db/config.php");
+?>
+<title> Input Data Barang Servis | App Manajement Servis dan Penjualan Laptop<</title>
+<div class="col-12 col-md-12 col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4>Formulir Data Barang Servis</h4>
+        </div>
+        <div class="card-body">
+            <form action="../proses/proses-data-barang-servis.php?aksi=tambah" method="post">
+                <div class="form-group">
+                    <label for="Serial_Barang">Serial Barang</label>
+                    <input type="text" class="form-control" name="Serial_Barang" id="Serial_Barang" placeholder="Masukan serial barang" />
+                </div>
+                <div class="form-group">
+                    <label for="Tipe_Barang">Tipe Barang</label>
+                    <input type="text" class="form-control" name="Tipe_Barang" id="Tipe_Barang" placeholder="Masukan Tipe Barang" />
+                </div>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+                <a href="../tampil/data-barang-servis.index.php" class="btn btn-secondary">Batal</a>
+            </form>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Data Barang Servis</title>
-</head>
-
-<body>
-    <h3>Tambah Data Barang Servis </h3>
-    <form action="../proses/proses-data-barang-servis.php?aksi=tambah" method="post">
-
-        <table>
-            <tr>
-                <td>Serial Barang</td>
-                <td><input type="text" name="Serial_Barang"></td>
-            </tr>
-            <tr>
-                <td>Tipe_Barang</td>
-                <td><input type="text" name="Tipe_Barang"></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Simpan"></td>
-                <td><a href="../tampil/data-barang-servis.index.php">Batal</a></td>
-            </tr>
-        </table>
-    </form>
-</body>
-
-</html>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<?php
+include("../layout/footer.php");
+?>

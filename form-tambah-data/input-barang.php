@@ -1,43 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include("../layout/app.php");
+include("../koneksi-db/config.php");
+$db = new Database();
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Barang</title>
-</head>
+?>
 
-<body>
-    <h3>Tambah User</h3>
-    <form action="../proses/proses-barang.php?aksi=tambah" method="post">
+<title>Input Barang | App Manajemen Servis dan Penjualan Laptop</title>
+<div class="col-12 col-md-12 col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4>Formulir Input Barang</h4>
+        </div>
+        <div class="card-body">
+            <form action="../proses/proses-barang.php?aksi=tambah" method="post">
+                <div class="form-group">
+                    <label for="Nama_Barang">Nama Barang</label>
+                    <input type="text" class="form-control" name="Nama_Barang" id="Nama_Barang"
+                        placeholder="Masukkan nama barang" required />
+                </div>
 
-        <table>
-            <tr>
-                <td>Nama Barang</td>
-                <td><input type="text" name="Nama_Barang"></td>
-            </tr>
-            <tr>
-                <td>ID Kategori</td>
-                <td><input type="number" name="Id_Kategori"></td>
-            </tr>
-            <tr>
-                <td>Harga Modal</td>
-                <td><input type="number" name="Harga_Modal"></td>
-            <tr>
-            <tr>
-                <td>Harga Jual</td>
-                <td><input type="number" name="Harga_Jual"></td>
-            <tr>
-            <tr>
-                <td>Stok</td>
-                <td><input type="number" name="Stok"></td>
-            <tr>
-                <td><input type="submit" value="Simpan"></td>
-                <td><a href="../tampil/barang.index.php">Batal</a></td>
-            </tr>
-        </table>
-    </form>
-</body>
+                <div class="form-group">
+                    <label for="Id_Kategori">Nama Kategori</label>
+                    <select class="form-control" name="Id_Kategori" id="Id_Kategori" required>
+                        <option value="">Pilih Kategori</option>
+                        <?php
+                        // Lakukan kueri SQL untuk mengambil nilai dari tabel kategori
+                        $query = "SELECT ID_Kategori, Nama_Kategori FROM tb_kategori_barang";
+                        $result = $db->execute($query);
 
-</html>
+                        // Loop untuk menambahkan setiap opsi ke dropdown
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<option value="' . $row['ID_Kategori'] . '">' . $row['Nama_Kategori'] . '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Harga_Modal">Harga Modal</label>
+                    <input type="text" class="form-control" name="Harga_Modal" id="Harga_Modal"
+                        placeholder="Masukkan Harga Modal" required/>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label for="Harga_Jual">Harga Jual</label>
+                    <input type="text" class="form-control" name="Harga_Jual" id="Harga_Jual"
+                        placeholder="Masukkan Harga Jual" required/>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label for="Stok">Stok</label>
+                    <input type="text" class="form-control" name="Stok" id="Stok" placeholder="Masukkan stok barang"
+                        required/>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Simpan</button>
+                <a href="../tampil/barang.index.php" class="btn btn-secondary">Batal</a>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<?php
+include("../layout/footer.php");
+?>

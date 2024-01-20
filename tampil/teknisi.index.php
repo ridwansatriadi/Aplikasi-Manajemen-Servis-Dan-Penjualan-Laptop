@@ -1,59 +1,61 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-<title>Data Teknisi</title>
-</head>
-
-<body>
-
-    <div class="container">
-        <?php
-        include("../koneksi-db/config.php");
-        $db = new Database();
-        ?>
-       
-        <h2>Data Teknisi</h2>
-
-        <a href="../form-tambah-data/input-teknisi.php">Tambah Data Teknisi</a>
-        <br>
-        <br>
-        <table border="1">
-            <tr>
-                <th>No</th>
-                <th>Nama Teknisi</th>
-                <th>Alamat</th>
-                <th>No Telpon</th>
-                <th>Opsi</th>
-            </tr>
-            <?php
-            $data = 1;
-            foreach ($db->tampil_teknisi() as $x) {
-                ?>
-                <tr>
-                    <td>
-                        <?php echo $data++; ?>
-                    </td>
-                    <td>
-                        <?php echo $x['Nama_Teknisi']; ?>
-                    </td>
-                    <td>
-                        <?php echo $x['Almat']; ?>
-                    </td>
-                    <td>
-                        <?php echo $x['no_telpon']; ?>
-                    </td>
-                    <!-- <td>
-                        <a href="edit.php?id=<?php echo $x['id']; ?>&aksi=edit">Edit</a>
-                        <a href="proses.php?id=<?php echo $x['id']; ?>&aksi=hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
-                    </td> -->
-                </tr>
-            <?php
-            }
-            ?>
-        </table>
+<?php
+include("../layout/app.php");
+include("../koneksi-db/config.php");
+$db = new Database();
+?>
+<title> Data Teknisi| App Manajement Servis dan Penjualan Laptop</title>
+<div class="col-12 col-md-12 col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4>Daftar Data Teknisi</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <a href="../form-tambah-data/input-teknisi.php" class="btn btn-primary mb-3">[+] Tambah Data Teknisi
+                    Baru</a>
+                <table class="table table-bordered table-md">
+                    <tbody>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Teknisi</th>
+                            <th>Alamat</th>
+                            <th>No Telpon</th>
+                            <th>Opsi</th>
+                        </tr>
+                        <tr>
+                            <?php
+                            $data = 1;
+                            foreach ($db->tampil_teknisi() as $x) {
+                                ?>
+                            <tr>
+                                <td>
+                                    <?php echo $data++; ?>
+                                </td>
+                                <td>
+                                    <?php echo $x['Nama_Teknisi']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $x['Almat']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $x['no_telpon']; ?>
+                                </td>
+                                <td>
+                                    <a href="../form-edit-data/edit-teknisi.php?id=<?php echo $x['ID_Teknisi']; ?>&aksi=edit" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="../proses/proses-teknisi.php?id=<?php echo $x['ID_Teknisi']; ?>&aksi=hapus" class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
+                                </td>
+                            </tr>
+                            <?php
+                            }
+                            ?>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-
-</body>
-
-</html>
+</div>
+<?php
+include("../layout/footer.php");
+?>

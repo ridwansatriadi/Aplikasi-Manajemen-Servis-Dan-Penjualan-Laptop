@@ -1,39 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include("../layout/app.php");
+include("../koneksi-db/config.php");
+?>
+<title> Input Operator Sistem | App Manajement Servis dan Penjualan Laptop<</title>
+<div class="col-12 col-md-12 col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4>Formulir Operator Sistem</h4>
+        </div>
+        <div class="card-body">
+            <form action="../proses/proses-operator-sistem.php?aksi=tambah" method="post">
+                <div class="form-group">
+                    <label for="Nama">Nama</label>
+                    <input type="text" class="form-control" name="Nama" id="Nama" placeholder="Masukan Nama Lengkap " />
+                </div>
+                <div class="form-group">
+                    <label for="Username">Username</label>
+                    <input type="text" class="form-control" name="Username" id="v" placeholder="Masukan Username" />
+                </div>
+                <div class="form-group">
+                    <label for="Level">Level</label>
+                    <input type="text" class="form-control" name="Level" id="Level" placeholder=" Masukan Level" />
+                </div>
+                <div class="form-group">
+                    <label for="Login_Terakhir">Login Terakhir</label>
+                    <input type="datetime" class="form-control" name="Login_Terakhir" id="Login_Terakhir" placeholder="Login Terakhir" />
+                </div>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+                <a href="../tampil/pelanggan.index.php" class="btn btn-secondary">Batal</a>
+            </form>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Data Operator Sistem</title>
-</head>
-
-<body>
-    <h3>Tambah Data Operator Sistem</h3>
-    <form action="../proses/proses-operator-sistem.php?aksi=tambah" method="post">
-
-        <table>
-            <tr>
-                <td>Nama</td>
-                <td><input type="text" name="Nama"></td>
-            </tr>
-            <tr>
-                <td>Username</td>
-                <td><input type="text" name="Username"></td>
-            </tr>
-            <tr>
-                <td>Level</td>
-                <td><input type="text" name="Level"></td>
-            </tr>
-            <tr>
-                <td>Login Terakhir</td>
-                </tr>
-            <tr>
-                <td><input type="submit" value="Simpan"></td>
-                <td><a href="../tampil/pelanggan.index.php">Batal</a></td>
-            </tr>
-        </table>
-    </form>
-</body>
-
-</html>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<?php
+include("../layout/footer.php");
+?>
