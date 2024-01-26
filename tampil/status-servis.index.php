@@ -18,7 +18,7 @@ $db = new Database();
                         <tr>
                             <th>No</th>
                             <th>Status</th>
-                            <th>Opsi</th>
+                            <!-- <th>Opsi</th> -->
                         </tr>
                         <tr>
                         <?php
@@ -35,11 +35,11 @@ $db = new Database();
                                 <td>
                                     <?php echo $x['Nama_Status']; ?>
                                 </td>
-                                <td>
+                                <!-- <td>
                                     <a href="../form-edit-data/edit-status-servis.php?id=<?php echo $x['ID_Status']; ?>&aksi=edit" class="btn btn-warning btn-sm">Edit</a>
                                     <a href="../proses/proses-status-servis.php?id=<?php echo $x['ID_Status']; ?>&aksi=hapus" class="btn btn-danger btn-sm"
                                         onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
-                                </td>
+                                </td> -->
                             </tr>
                             <?php
                                 }

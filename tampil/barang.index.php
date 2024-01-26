@@ -26,7 +26,7 @@ function formatRupiah($angka) {
                         <th>Harga Modal</th>
                         <th>Harga Jual</th>
                         <th>Stok</th>
-                        <th>Opsi</th>
+                        <!-- <th>Opsi</th> -->
                     </tr>
                     <?php
                     $data = 1;
@@ -51,13 +51,13 @@ function formatRupiah($angka) {
                             <td>
                                 <?php echo $x['Stok']?>
                             </td>
-                            <td>
+                            <!-- <td>
                                 <a href="../form-edit-data/edit-barang.php?id=<?php echo $x['ID_Barang']; ?>&aksi=edit"
                                     class="btn btn-warning btn-sm">Edit</a>
                                 <a href="../proses/proses-barang.php?id=<?php echo $x['ID_Barang']; ?>&aksi=hapus"
                                     class="btn btn-danger btn-sm"
                                     onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
-                            </td>
+                            </td> -->
                         </tr>
                         <?php
                     }

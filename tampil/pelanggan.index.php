@@ -19,7 +19,7 @@ $db = new Database();
                             <th>Alamat</th>
                             <th>Kontak</th>
                             <th>Email</th>
-                            <th>Opsi</th>
+                            <!-- <th>Opsi</th> -->
                         </tr>
                     <tbody>
                         <?php
@@ -35,10 +35,10 @@ $db = new Database();
                                     <td><?php echo $x['Alamat']; ?></td>
                                     <td><?php echo $x['Kontak']; ?></td>
                                     <td><?php echo $x['Email']; ?></td>
-                                    <td>
+                                    <!-- <td>
                                         <a href="../form-edit-data/edit-pelanggan.php?id=<?php echo $x['ID_Pelanggan']; ?>&aksi=edit" class="btn btn-warning btn-sm">Edit</a>
                                         <a href="../proses/proses-pelanggan.php?id=<?php echo $x['ID_Pelanggan']; ?>&aksi=hapus" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
-                                    </td>
+                                    </td> -->
                                 </tr>
                         <?php
                             }

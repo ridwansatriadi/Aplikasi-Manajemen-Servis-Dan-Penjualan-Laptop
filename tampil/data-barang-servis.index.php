@@ -24,7 +24,7 @@
                                 <th>Kondisi Barang</th>
                                 <th>Kelengkapan Barang</th>
                                 <th>solusi</th>
-                                <th>Opsi</th>
+                                <!-- <th>Opsi</th> -->
                             </tr>
                             <tr>
                                 <?php
@@ -56,11 +56,11 @@
                                     <td>
                                         <?php echo $x['solusi']; ?>
                                     </td>
-                                    <td>
+                                    <!-- <td>
                                         <a href="../form-edit-data/edit-data-barang-servis.php?id=<?php echo $x['ID_Service']; ?>&aksi=edit" class="btn btn-warning btn-sm" >Edit</a>
                                         <a href="../proses/proses-data-barang-servis.php?id=<?php echo $x['ID_Service']; ?>&aksi=hapus" class="btn btn-danger btn-sm"
                                             onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
-                                    </td>
+                                    </td> -->
                                 </tr>
                                 <?php
                                 }

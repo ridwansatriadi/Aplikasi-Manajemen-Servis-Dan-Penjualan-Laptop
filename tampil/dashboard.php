@@ -16,10 +16,10 @@ $db = new Database();
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>Total Admin</h4>
+            <h4>Total Pelanggan</h4>
           </div>
           <div class="card-body">
-            10
+            4
           </div>
         </div>
       </div>
@@ -31,10 +31,10 @@ $db = new Database();
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>News</h4>
+            <h4>Total Barang</h4>
           </div>
           <div class="card-body">
-            42
+            6
           </div>
         </div>
       </div>
@@ -46,10 +46,10 @@ $db = new Database();
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>Reports</h4>
+            <h4>Total Barang Servis</h4>
           </div>
           <div class="card-body">
-            1,201
+            2
           </div>
         </div>
       </div>
@@ -61,10 +61,10 @@ $db = new Database();
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>Online Users</h4>
+            <h4>Total Transaksi</h4>
           </div>
           <div class="card-body">
-            47
+            500
           </div>
         </div>
       </div>

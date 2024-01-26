@@ -28,7 +28,7 @@ function formatRupiah($angka) {
                             <th>Operator</th>
                             <th>Status</th>
                             <th>Total Biaya</th>
-                            <th>Opsi</th>
+                            <!-- <th>Opsi</th> -->
                         </tr>
                         <tr>
                         <?php
@@ -61,11 +61,11 @@ function formatRupiah($angka) {
                                 <td>
                                     <?php echo  $result = "Rp. " .number_format($x['Total_Biaya']); ?>
                                 </td>
-                                <td>
+                                <!-- <td>
                                     <a href="../form-edit-data/edit-transaksi-servis.php?id=<?php echo $x['ID_Transaksi_Servis']; ?>&aksi=edit" class="btn btn-warning btn-sm">Edit</a>
                                     <a href="../proses/proses-transaksi-servis.php?id=<?php echo $x['ID_Transaksi_Servis']; ?>&aksi=hapus" class="btn btn-danger btn-sm"
                                         onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
-                                </td>
+                                </td> -->
                             </tr>
                             <?php
                                 }
