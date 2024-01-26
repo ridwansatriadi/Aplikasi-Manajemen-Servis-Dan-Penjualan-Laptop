@@ -236,8 +236,8 @@
                     </li>
                     <li class="dropdown"><a href="#" data-toggle="dropdown"
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-                            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div>
+                            <img alt="image" src="ridok.jpg" class="rounded-circle mr-1">
+                            <div class="d-sm-none d-lg-inline-block">Hi, Ridwan Satriadi</div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="dropdown-title">Logged in 5 min ago</div>
@@ -261,69 +261,74 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html">Stisla</a>
+                        <a href="index.html">Pioner Komputer</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
                         <a href="index.html">St</a>
                     </div>
                     <ul class="sidebar-menu">
-                        <!-- <li>
-                            <a href="../pendaftaran-siswa/index.php" class="nav-link"><i
-                                    class="fas fa-fire"></i><span>Siswa</span></a>
-                        </li>
-                        <li>
-                            <a href="../agama-ku/index.php" class="nav-link"><i
-                                    class="fas fa-fire"></i><span>Agama</span></a>
-                        </li> -->
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-                        <li class="dropdown active">
-                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Master
-                                    Data</span></a>
-                            <ul class="dropdown-menu" style="display: block;">
-                                <li class="active"><a class="nav-link" href="../tampil/kategori-barang.index.php">Kategori Barang</a></li>
-                                <li><a class="nav-link" href="../tampil/barang.index.php">Data Barang</a></li>
-                                <li><a class="nav-link" href="../tampil/data-barang-servis.index.php">Data Barang
-                                        Servis</a></li>
-                                <li><a class="nav-link" href="../tampil/pelanggan.index.php">Data Pelanggan</a></li>
-                                <li><a class="nav-link" href="../tampil/teknisi.index.php">Data Teknisi</a></li>
-                                <li><a class="nav-link" href="../tampil/operator-sistem.index.php">Data Operator
-                                        Sistem</a></li>
-                                <li><a class="nav-link" href="../tampil/status-servis.index.php">Data Status Servis</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown active">
-                            <a href="#" class="nav-link has-dropdown"><i
-                                    class="fas fa-fire"></i><span>Transaksi</span></a>
-                            <ul class="dropdown-menu" style="display: block;">
-                                <li class="active"><a class="nav-link" href="../tampil/transaksi-penjualan.index.php">Penjualan</a></li>
-                                <li><a class="nav-link" href="../tampil/transaksi-servis.index.php">Servis</a></li>
-                                <li><a class="nav-link" href="../tampil/transaksi-piutang.index.php">Piutang</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown active">
-                            <a href="#" class="nav-link has-dropdown"><i
-                                    class="fas fa-fire"></i><span>Laporan</span></a>
-                            <ul class="dropdown-menu" style="display: block;">
-                                <li class="active"><a class="nav-link" href="../tampil/laporan-penjualan.index.php">Laporan Penjualan</a></li>
-                                <li class="active"><a class="nav-link" href="../tampil/laporan-servis.index.php">Laporan Servis</a></li>
-                                <li class="active"><a class="nav-link" href="../tampil/laporan-piutang.index.php">Laporan Piutang</a></li>
-                                <!-- <li><a class="nav-link" href="../tampil/transaksi-servis.index.php">Servis</a></li>
-                                <li><a class="nav-link" href="../tampil/transaksi-piutang.index.php">Piutang</a></li> -->
-                            </ul>
-                        <li class="dropdown active">
-                            <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
-                            <ul class="dropdown-menu" style="display: block;">
-                                <li><a href="../auth/login/login.php">Login</a></li>
-                                <li><a href="auth-register.html">Register</a></li>
-                            </ul>
-                        </li>
-                       
-                        </li>
-                    </ul>
+            <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+
+            <li class="dropdown <?php echo (basename($_SERVER['PHP_SELF']) == 'kategori-barang.index.php') ? 'active' : ''; ?>">
+                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Maser Data</span></a>
+                <ul class="dropdown-menu" style="display: block;">
+                <li class="<?php echo (basename($_SERVER['PHP_SELF']) == 'kategori-barang.index.php') ? 'active' : ''; ?>">
+                        <a class="nav-link" href="../tampil/kategori-barang.index.php">Kategori Barang</a>
+                    </li>
+                    <li class="<?php echo (basename($_SERVER['PHP_SELF']) == 'barang.index.php') ? 'active' : ''; ?>">
+                        <a class="nav-link" href="../tampil/barang.index.php">Data Barang</a>
+                    </li>
+                    <li class="<?php echo (basename($_SERVER['PHP_SELF']) == 'data-barang-servis.index.php') ? 'active' : ''; ?>">
+                        <a class="nav-link" href="../tampil/data-barang-servis.index.php">Data Barang Servis</a>
+                    <li class="<?php echo (basename($_SERVER['PHP_SELF']) == 'pelanggan.index.php') ? 'active' : ''; ?>">
+                        <a class="nav-link" href="../tampil/pelanggan.index.php">Data Pelanggan</a>
+                     <li class="<?php echo (basename($_SERVER['PHP_SELF']) == 'teknisi.index.php') ? 'active' : ''; ?>">
+                        <a class="nav-link" href="../tampil/teknisi.index.php">Data Teknisi</a>
+                    <li class="<?php echo (basename($_SERVER['PHP_SELF']) == 'operator-sistem.index.php') ? 'active' : ''; ?>">
+                        <a class="nav-link" href="../tampil/operator-sistem.index.php">Data Operator Sistem</a>
+                    <li class="<?php echo (basename($_SERVER['PHP_SELF']) == 'status-servis.index.php') ? 'active' : ''; ?>">
+                        <a class="nav-link" href="../tampil/status-servis.index.php">Data Status Servis</a>
+                </ul>
+            </li>
+
+            <li class="dropdown <?php echo (basename($_SERVER['PHP_SELF']) == 'transaksi-penjualan.index.php') ? 'active' : ''; ?>">
+                <a href="#"  class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Transaksi</span></a>
+                <ul class="dropdown-menu" style="display: block;">
+                <li class="dropdown <?php echo (basename($_SERVER['PHP_SELF']) == 'transaksi-penjualan.index.php') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="../tampil/transaksi-penjualan.index.php">Penjualan</a>
+                <li class="dropdown <?php echo (basename($_SERVER['PHP_SELF']) == 'transaksi-servis.index.php') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="../tampil/transaksi-servis.index.php">Servis</a>
+                <li class="dropdown <?php echo (basename($_SERVER['PHP_SELF']) == 'transaksi-piutang.index.php') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="../tampil/transaksi-piutang.index.php">Piutang</a>
+                </ul>
+            </li>
+
+            <li class="dropdown <?php echo (basename($_SERVER['PHP_SELF']) == 'laporan') ? 'active' : ''; ?>">
+                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Laporan</span></a>
+                <ul class="dropdown-menu" style="display: block;">
+                <li class="dropdown <?php echo (basename($_SERVER['PHP_SELF']) == 'laporan-penjualan.index.php') ? 'active' : ''; ?>">
+                        <a class="nav-link" href="../tampil/laporan-penjualan.index.php">Laporan Penjualan</a>
+                    <li class="dropdown <?php echo (basename($_SERVER['PHP_SELF']) == 'laporan-servis.index.php') ? 'active' : ''; ?>">
+                        <a class="nav-link" href="../tampil/laporan-servis.index.php">Laporan Servis</a>
+                    <li class="dropdown <?php echo (basename($_SERVER['PHP_SELF']) == 'laporan-piutang.index.php') ? 'active' : ''; ?>">
+                        <a class="nav-link" href="../tampil/laporan-piutang.index.php">Laporan Piutang</a>
+                </ul>
+            </li>
+
+            <li class="dropdown <?php echo (basename($_SERVER['PHP_SELF']) == 'login.php' || basename($_SERVER['PHP_SELF']) == 'auth-register.html') ? 'active' : ''; ?>">
+                <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
+                <ul class="dropdown-menu" style="display: block;">
+                    <li><a href="../auth/login/login.php">Login</a></li>
+                    <li><a href="auth-register.html">Register</a></li>
+                </ul>
+            </li>
+        </ul>
+
+                    
 
                 </aside>
             </div>
+            
 
             <!-- Main Content -->
             <div class="main-content">

@@ -23,6 +23,22 @@ $db = new Database();
                     <input type="date" class="form-control" name="Tanggal" id="Tanggal" placeholder="Masukkan Tanggal" />
                 </div> 
                 <div class="form-group">
+                    <label for="ID_Pelanggan">Pelanggan</label>
+                    <select class="form-control" name="ID_Pelanggan" id="ID_Pelanggan" required>
+                        <option value="">Pilih Pelanggan</option>
+                        <?php
+                        // Ambil nilai dari tabel tb_pelanggan
+                        $query_piuang = "SELECT ID_Pelanggan, Nama_Pelanggan FROM tb_pelanggan";
+                        $result_piuang = $db->execute($query_piuang);
+
+                        // Tambahkan setiap opsi ke dropdown
+                        while ($row_piuang = $result_piuang->fetch_assoc()) {
+                            echo '<option value="' . $row_piuang['ID_Pelanggan'] . '">' . $row_piuang['Nama_Pelanggan'] . '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="ID_Operator">Operator</label>
                     <select class="form-control" name="ID_Operator" id="ID_Operator" required>
                         <option value="">Pilih Operator</option>

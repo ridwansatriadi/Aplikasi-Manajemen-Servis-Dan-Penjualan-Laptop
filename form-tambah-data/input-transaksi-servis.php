@@ -55,9 +55,9 @@ $db = new Database();
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="ID_Status">Operator</label>
+                    <label for="ID_Status">Status</label>
                     <select class="form-control" name="ID_Status" id="ID_Status" required>
-                        <option value="">Pilih Operator</option>
+                        <option value="">Pilih Status</option>
                         <?php
                         // Ambil nilai dari tabel tb_operator
                         $queryOperator = "SELECT ID_Status, Nama_Status FROM tb_status_servis";
@@ -71,8 +71,8 @@ $db = new Database();
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="Total_Penjualan">Total Penjualan</label>
-                    <input type="text" class="form-control" name="Total_Penjualan" id="Total_Penjualan" placeholder="Masukkan Total Penjualan" />
+                    <label for="Total_Biaya">Total Biaya</label>
+                    <input type="text" class="form-control" name="Total_Biaya" id="Total_Biaya" placeholder="Masukkan Total Penjualan" />
                 </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <a href="../tampil/transaksi-servis.index.php" class="btn btn-secondary">Batal</a>

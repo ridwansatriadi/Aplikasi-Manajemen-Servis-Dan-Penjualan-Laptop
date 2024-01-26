@@ -35,8 +35,6 @@ $db = new Database();
                         ?>
                     </select>
                 </div>
-
-
                 <div class="form-group">
                     <label for="Harga_Modal">Harga Modal</label>
                     <input type="text" class="form-control" name="Harga_Modal" id="Harga_Modal"
@@ -53,8 +51,7 @@ $db = new Database();
 
                 <div class="form-group">
                     <label for="Stok">Stok</label>
-                    <input type="text" class="form-control" name="Stok" id="Stok" placeholder="Masukkan stok barang"
-                        required />
+                    <input type="text" class="form-control" name="Stok" id="Stok" placeholder="Masukkan stok barang"/>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Simpan</button>

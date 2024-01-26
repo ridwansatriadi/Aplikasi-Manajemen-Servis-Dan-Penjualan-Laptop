@@ -95,6 +95,7 @@ CREATE TABLE tb_transaksi_piutang (
     ID_Transaksi_Piutang INT PRIMARY KEY,
     Faktur VARCHAR(100),
     Tanggal DATETIME,
+    ID_Pelanggan INT,
     ID_Operator INT,
     Total_Hutang DECIMAL(10, 2),
     Total_Pembayaran DECIMAL(10, 2),
@@ -133,8 +134,10 @@ CREATE TABLE tb_laporan_piutang (
     ID_Laporan_Piutang INT PRIMARY KEY,
     Tanggal DATE,
     ID_Transaksi_Piutang INT,
+    ID_Pelanggan INT,
     ID_Operator INT,
     Total_Hutang DECIMAL(10, 2),
+    Total_Pembayaran
     Sisa_Hutang DECIMAL(10, 2),
     FOREIGN KEY (ID_Transaksi_Piutang) REFERENCES tb_transaksi_piutang(ID_Transaksi_Piutang),
     FOREIGN KEY (ID_Operator) REFERENCES tb_operator_sistem(ID_Operator)

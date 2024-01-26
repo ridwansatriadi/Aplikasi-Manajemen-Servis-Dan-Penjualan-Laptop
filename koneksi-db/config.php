@@ -233,10 +233,10 @@ class Database
         mysqli_query($this->koneksi, "INSERT INTO `tb_transaksi_servis`(`Faktur`, `Tanggal`, `ID_Pelanggan`, `ID_Operator`, `ID_Status`, `Total_Biaya`) 
             VALUES ('$Faktur', '$Tanggal', '$ID_Pelanggan', '$ID_Operator', '$ID_Status', '$Total_Biaya')");
     }
-    public function tambah_transaksi_piutang($Faktur, $Tanggal, $ID_Operator, $Total_Hutang, $Total_Pembayaran, $Sisa_Hutang)
+    public function tambah_transaksi_piutang($Faktur, $Tanggal, $ID_Pelanggan, $ID_Operator, $Total_Hutang, $Total_Pembayaran, $Sisa_Hutang)
     {
-        mysqli_query($this->koneksi, "INSERT INTO `tb_transaksi_piutang`(`Faktur`, `Tanggal`, `ID_Operator`, `Total_Hutang`, `Total_Pembayaran`, `Sisa_Hutang`) 
-            VALUES ('$Faktur', '$Tanggal', '$ID_Operator', '$Total_Hutang', '$Total_Pembayaran', '$Sisa_Hutang')");
+        mysqli_query($this->koneksi, "INSERT INTO `tb_transaksi_piutang`(`Faktur`, `Tanggal`, `ID_Pelanggan`, `ID_Operator`, `Total_Hutang`, `Total_Pembayaran`, `Sisa_Hutang`) 
+            VALUES ('$Faktur', '$Tanggal', '$ID_Pelanggan', '$ID_Operator', '$Total_Hutang', '$Total_Pembayaran', '$Sisa_Hutang')");
     }
     public function tambah_laporan_penjualan($Tanggal, $ID_Transaksi_Penjualan, $ID_Pelanggan, $ID_Operator, $Total_Transaksi)
     {
@@ -248,10 +248,11 @@ class Database
         mysqli_query($this->koneksi, "INSERT INTO `tb_laporan_servis`(`Tanggal`, `ID_Transaksi_Servis`, `ID_Pelanggan`, `ID_Operator`, `Total_Biaya`) 
         VALUES ('$Tanggal', '$ID_Transaksi_Servis', '$ID_Pelanggan', '$ID_Operator', '$Total_Biaya')");
     }
-    public function tambah_laporan_piutang($Tanggal, $ID_Transaksi_Piutang, $ID_Pelanggan, $ID_Operator, $Total_Biaya)
+ 
+    public function tambah_laporan_piutang($Tanggal, $ID_Transaksi_Piutang, $ID_Pelanggan, $ID_Operator, $Total_Hutang, $Total_Pembayaran, $Sisa_Hutang)
     {
-        mysqli_query($this->koneksi, "INSERT INTO `tb_laporan_servis`(`Tanggal`, `ID_Transaksi_Piutang`, `ID_Pelanggan`, `ID_Operator`, `Total_Biaya`) 
-        VALUES ('$Tanggal', '$ID_Transaksi_Piutang', '$ID_Pelanggan', '$ID_Operator', '$Total_Biaya')");
+        mysqli_query($this->koneksi, "INSERT INTO `tb_laporan_piutang`(`Tanggal`, `ID_Transaksi_Piutang`, `ID_Pelanggan`, `ID_Operator`, `Total_Hutang`, `Total_Pembayaran`, `Sisa_Hutang`) 
+        VALUES ('$Tanggal', '$ID_Transaksi_Piutang', '$ID_Pelanggan', '$ID_Operator', '$Total_Hutang', '$Total_Pembayaran', '$Sisa_Hutang')");
     }
 
 
@@ -394,9 +395,9 @@ class Database
         }
         return $hasil;
     }
-    public function update_transaksi_piutang($ID_Transaksi_Piutang, $Faktur, $Tanggal, $ID_Operator, $Total_Hutang, $Total_Pembayaran, $Sisa_Hutang)
+    public function update_transaksi_piutang($ID_Transaksi_Piutang, $Faktur, $Tanggal, $ID_Pelanggan, $ID_Operator, $Total_Hutang, $Total_Pembayaran, $Sisa_Hutang)
     {
-        mysqli_query($this->koneksi, "UPDATE `tb_transaksi_piutang` SET `ID_Transaksi_Piutang`='$ID_Transaksi_Piutang', `Faktur`='$Faktur' , `Tanggal`='$Tanggal' , `ID_Operator`='$ID_Operator' , `Total_Hutang`='$Total_Hutang', `Total_Pembayaran`='$Total_Pembayaran', `Sisa_Hutang`='$Sisa_Hutang' WHERE `ID_Transaksi_Piutang`='$ID_Transaksi_Piutang'");
+        mysqli_query($this->koneksi, "UPDATE `tb_transaksi_piutang` SET `ID_Transaksi_Piutang`='$ID_Transaksi_Piutang', `Faktur`='$Faktur' , `Tanggal`='$Tanggal' , `ID_Pelanggan`='$ID_Pelanggan', `ID_Operator`='$ID_Operator' , `Total_Hutang`='$Total_Hutang', `Total_Pembayaran`='$Total_Pembayaran', `Sisa_Hutang`='$Sisa_Hutang' WHERE `ID_Transaksi_Piutang`='$ID_Transaksi_Piutang'");
     }
 
     public function edit_transaksi_piutang($ID_Transaksi_Piutang)
@@ -434,6 +435,37 @@ class Database
         $hasil = array();
 
         $data = mysqli_query($this->koneksi, "SELECT * FROM tb_laporan_servis WHERE ID_Laporan_Servis='$ID_Laporan_Servis'");
+        while ($d = mysqli_fetch_array($data)) {
+            $hasil[] = $d;
+        }
+        return $hasil;
+    }
+    // public function update_laporan_piutang($ID_Laporan_Piutang, $Tanggal, $ID_Transaksi_Servis, $ID_Pelanggan, $ID_Operator, $Total_Hutang, $Sisa_Hutang )
+    // {
+    //     mysqli_query($this->koneksi, "UPDATE `tb_laporan_piutang` SET `ID_Laporan_Piutang`='$ID_Laporan_Piutang', `Tanggal`='$Tanggal', `ID_Transaksi_Servis`='$ID_Transaksi_Servis' , `ID_Pelanggan`='$ID_Pelanggan' , `ID_Operator`='$ID_Operator' , `Total_Hutang`='$Total_Hutang',  `Sisa_Hutang`='$Sisa_Hutang' WHERE `ID_Laporan_Piutang`='$ID_Laporan_Piutang'");
+    // }
+
+    // public function edit_laporan_piutang($ID_Laporan_Piutang)
+    // {
+    //     $hasil = array();
+
+    //     $data = mysqli_query($this->koneksi, "SELECT * FROM tb_laporan_piutang WHERE ID_Laporan_Piutang='$ID_Laporan_Piutang'");
+    //     while ($d = mysqli_fetch_array($data)) {
+    //         $hasil[] = $d;
+    //     }
+    //     return $hasil;
+    // }
+    public function update_laporan_piutang($ID_Laporan_Piutang, $Tanggal, $ID_Transaksi_Piutang, $ID_Pelanggan, $ID_Operator, $Total_Hutang, $Total_Pembayaran, $Sisa_Hutang )
+    {
+        mysqli_query($this->koneksi, "UPDATE `tb_laporan_piutang` SET `ID_Laporan_Piutang`='$ID_Laporan_Piutang', `Tanggal`='$Tanggal', `ID_Transaksi_Piutang`='$ID_Transaksi_Piutang', 
+        `ID_Pelanggan`='$ID_Pelanggan', `ID_Operator`='$ID_Operator', `Total_Hutang`='$Total_Hutang', `Total_Pembayaran`='$Total_Pembayaran', `Sisa_Hutang`='$Sisa_Hutang' WHERE `ID_Laporan_Piutang`='$ID_Laporan_Piutang'");
+    }
+
+    public function edit_laporan_piutang($ID_Laporan_Piutang)
+    {
+        $hasil = array();
+
+        $data = mysqli_query($this->koneksi, "SELECT * FROM tb_laporan_piutang WHERE ID_Laporan_Piutang='$ID_Laporan_Piutang'");
         while ($d = mysqli_fetch_array($data)) {
             $hasil[] = $d;
         }
@@ -480,6 +512,10 @@ class Database
     {
         mysqli_query($this->koneksi, "DELETE FROM `tb_operator_sistem` WHERE ID_Operator='$ID_Operator'");
     }
+    public function delete_status_servis($ID_Status)
+    {
+        mysqli_query($this->koneksi, "DELETE FROM `tb_status_servis` WHERE ID_Status='$ID_Status'");
+    }
 
     public function delete_transaki_penjualan($ID_Transaksi_Penjualan)
     {
@@ -500,6 +536,10 @@ class Database
     public function delete_laporan_servis($ID_Laporan_Servis)
     {
         mysqli_query($this->koneksi, "DELETE FROM `tb_laporan_servis` WHERE ID_Laporan_Servis='$ID_Laporan_Servis'");
+    }
+    public function delete_laporan_piutang($ID_Laporan_Piutang)
+    {
+        mysqli_query($this->koneksi, "DELETE FROM `tb_laporan_piutang` WHERE ID_Laporan_Piutang='$ID_Laporan_Piutang'");
     }
 
 
@@ -553,11 +593,13 @@ class Database
         }
         return $hasil;
     }
-    public function tampil_transaksi_piutang_dgn_operator()
+    public function tampil_transaksi_piutang_dgn_operator_dan_pelanggan()
     {
-        $query = "SELECT tb_transaksi_piutang.*, tb_operator_sistem.Nama
+        $query = "SELECT tb_transaksi_piutang.*, tb_operator_sistem.Nama, tb_pelanggan.Nama_Pelanggan
                 FROM tb_transaksi_piutang
-                INNER JOIN tb_operator_sistem ON tb_transaksi_piutang.ID_Operator = tb_operator_sistem.ID_Operator";
+                INNER JOIN tb_operator_sistem ON tb_transaksi_piutang.ID_Operator = tb_operator_sistem.ID_Operator
+                INNER JOIN tb_pelanggan ON tb_transaksi_piutang.ID_Pelanggan = tb_pelanggan.ID_Pelanggan";
+
 
         $result = mysqli_query($this->koneksi, $query);
 
@@ -620,6 +662,22 @@ class Database
                 INNER JOIN tb_transaksi_servis ON tb_laporan_servis.ID_Transaksi_Servis = tb_transaksi_servis.ID_Transaksi_Servis
                 INNER JOIN tb_pelanggan ON tb_laporan_servis.ID_Pelanggan = tb_pelanggan.ID_Pelanggan
                 INNER JOIN tb_operator_sistem ON tb_laporan_servis.ID_Operator = tb_operator_sistem.ID_Operator";
+
+        $result = mysqli_query($this->koneksi, $query);
+
+        $hasil = array();
+        while ($dat = mysqli_fetch_array($result)) {
+            $hasil[] = $dat;
+        }
+        return $hasil;
+    }
+    public function tampil_laporan_piutang_dgn_pelanggan_transaksi_piutang_operator()
+    {
+        $query = "SELECT tb_laporan_piutang.*, tb_transaksi_piutang.Faktur, tb_pelanggan.Nama_Pelanggan, tb_operator_sistem.Nama
+                FROM tb_laporan_piutang
+                INNER JOIN tb_transaksi_piutang ON tb_laporan_piutang.ID_Transaksi_Piutang = tb_transaksi_piutang.ID_Transaksi_Piutang
+                INNER JOIN tb_pelanggan ON tb_laporan_piutang.ID_Pelanggan = tb_pelanggan.ID_Pelanggan
+                INNER JOIN tb_operator_sistem ON tb_laporan_piutang.ID_Operator = tb_operator_sistem.ID_Operator";
 
         $result = mysqli_query($this->koneksi, $query);
 

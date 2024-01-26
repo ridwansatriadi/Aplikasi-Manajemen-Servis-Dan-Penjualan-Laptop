@@ -70,3 +70,29 @@ ID_Transaksi_Piutang (Kunci Asing yang merujuk ke tb_transaksi_piutang.ID_Transa
 ID_Operator (Kunci Asing yang merujuk ke tb_operator_sistem.ID_Operator)
 Hubungan: Many-to-One (Banyak-ke-Satu)
 Banyak laporan piutang dapat terkait dengan satu transaksi piutang dan satu operator sistem.
+
+
+
+
+Halaman Dashboard (admin & Teknisi):
+
+Halaman ini dirancang untuk menampilkan informasi ringkasan kepada admin dan teknisi. Dashboard mencakup data yang relevan dari tabel Operator Sistem (tb_operator_sistem) dan Teknisi (tb_teknisi).
+Halaman Master Data:
+
+Kategori Barang: Memungkinkan pengguna untuk mengelola kategori barang yang tersedia. Data kategori barang disimpan dalam tabel Kategori Barang (tb_kategori_barang).
+Data Barang: Memberikan akses untuk menambah, mengedit, atau menghapus informasi terkait barang yang dijual. Data barang tersimpan dalam tabel Barang (tb_barang) dan terkait dengan Kategori Barang (tb_kategori_barang).
+Data Barang Service: Memungkinkan pengguna untuk mengelola barang-barang yang sedang dalam proses servis. Data ini terkait dengan Barang (tb_barang) melalui tabel Data Barang Servis (tb_data_barang_servis).
+Data Pelanggan: Halaman ini memungkinkan pengguna untuk mengelola informasi pelanggan. Data pelanggan disimpan dalam tabel Pelanggan (tb_pelanggan).
+Data Teknisi: Menyediakan fungsionalitas untuk mengelola data teknisi yang terlibat dalam layanan. Data teknisi disimpan dalam tabel Teknisi (tb_teknisi).
+Operator Sistem: Memberikan akses untuk mengelola data operator sistem dan hak aksesnya. Data operator sistem tersimpan dalam tabel Operator Sistem (tb_operator_sistem).
+Status Service: Memungkinkan pengguna untuk mengelola status pengerjaan servis. Data status servis tersimpan dalam tabel Status Servis (tb_status_servis).
+Transaksi:
+
+Penjualan: Halaman ini memungkinkan pengguna untuk mencatat dan melacak transaksi penjualan barang. Data transaksi penjualan tersimpan dalam tabel Transaksi Penjualan (tb_transaksi_penjualan) dan terkait dengan Pelanggan (tb_pelanggan) serta Operator Sistem (tb_operator_sistem).
+Service: Memberikan fungsionalitas untuk mencatat dan mengelola layanan perbaikan laptop. Data transaksi servis tersimpan dalam tabel Transaksi Servis (tb_transaksi_servis) dan terkait dengan Pelanggan (tb_pelanggan), Operator Sistem (tb_operator_sistem), dan Status Servis (tb_status_servis).
+Piutang: Memungkinkan pengguna untuk mencatat transaksi yang memiliki kewajiban pembayaran di masa mendatang. Data transaksi piutang tersimpan dalam tabel Transaksi Piutang (tb_transaksi_piutang) dan terkait dengan Operator Sistem (tb_operator_sistem).
+Laporan:
+
+Laporan Penjualan: Halaman ini menampilkan laporan terkait transaksi penjualan. Data laporan penjualan tersimpan dalam tabel Laporan Penjualan (tb_laporan_penjualan) dan terkait dengan Transaksi Penjualan (tb_transaksi_penjualan), Pelanggan (tb_pelanggan), dan Operator Sistem (tb_operator_sistem).
+Laporan Service: Menyajikan laporan terkait layanan yang telah diberikan. Data laporan servis tersimpan dalam tabel Laporan Servis (tb_laporan_servis) dan terkait dengan Transaksi Servis (tb_transaksi_servis), Pelanggan (tb_pelanggan), dan Operator Sistem (tb_operator_sistem).
+Laporan Piutang: Halaman ini menampilkan laporan terkait transaksi piutang. Data laporan piutang tersimpan dalam tabel Laporan Piutang (tb_laporan_piutang) dan terkait dengan Transaksi Piutang (tb_transaksi_piutang) serta Operator Sistem (tb_operator_sistem).

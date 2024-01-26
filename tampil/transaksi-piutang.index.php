@@ -23,7 +23,8 @@ function formatRupiah($angka) {
                             <th>No</th>
                             <th>Faktur</th>
                             <th>Tanggal</th>
-                            <th>Nama</th>
+                            <th>Pelanggan</th>
+                            <th>Operator</th>
                             <th>Total Hutang</th>
                             <th>Total Pembayaran</th>
                             <th>Sisa Hutang</th>
@@ -32,7 +33,7 @@ function formatRupiah($angka) {
                         <tr>
                             <?php
                             $data = 1;
-                            foreach ($db->tampil_transaksi_piutang_dgn_operator() as $x) {
+                            foreach ($db->tampil_transaksi_piutang_dgn_operator_dan_pelanggan() as $x) {
                                 ?>
                             <tr>
                                 <td>
@@ -43,6 +44,9 @@ function formatRupiah($angka) {
                                 </td>
                                 <td>
                                     <?php echo $x['Tanggal']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $x['Nama_Pelanggan']; ?>
                                 </td>
                                 <td>
                                     <?php echo $x['Nama']; ?>
