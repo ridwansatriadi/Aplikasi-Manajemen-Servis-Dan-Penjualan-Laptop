@@ -1,0 +1,141 @@
+CREATE TABLE tb_kategori_barang (
+    ID_Kategori INT AUTO_INCREMENT PRIMARY KEY,
+    Nama_Kategori VARCHAR(50),
+    FOREIGN KEY (Nama_Kategori) REFERENCES tb_barang(ID_kategori),
+    FOREIGN KEY (Nama_Kategori) REFERENCES tb_data_barang_servis(Kategori_id)
+);
+
+
+-- Tabel Barang
+CREATE TABLE tb_barang (
+    ID_Barang INT PRIMARY KEY,
+    Nama_Barang VARCHAR(100),
+     ID_kategori INT,
+    Harga_Modal DECIMAL(10, 2),
+    Harga_Jual DECIMAL(10, 2),
+    Stok INT,
+    FOREIGN KEY (Id_Kategori) REFERENCES tb_kategori_barang(ID_Kategori)
+);
+
+-- Tabel Data Barang Servis
+CREATE TABLE tb_data_barang_servis (
+    ID_Service  INT PRIMARY KEY,
+    Serial_Barang VARCHAR(100),
+    barang_id INT
+    Tipe_Barang VARCHAR(100),
+    Tanggal_Masuk DATE,
+    Kondisi_Barang VARCHAR(255),
+    Kelengkapan_Barang VARCHAR(255),
+    solusi VARCHAR(255),
+    FOREIGN KEY (Id_Barang) REFERENCES tb_barang(ID_Barang)
+);
+
+-- Tabel Pelanggan
+CREATE TABLE tb_pelanggan (
+    ID_Pelanggan INT PRIMARY KEY,
+    Nama_Pelanggan VARCHAR(100),
+    Alamat VARCHAR(255),
+    Kontak VARCHAR(20),
+    Email VARCHAR(50)
+);
+
+-- Tabel Teknisi
+CREATE TABLE tb_teknisi (
+    ID_Teknisi INT PRIMARY KEY,
+    Nama_Teknisi VARCHAR(100),
+    Alamat VARCHAR(255),
+    No_Telpon VARCHAR(20),
+    Email VARCHAR(50)
+);
+
+-- Tabel Operator Sistem
+CREATE TABLE tb_operator_sistem (
+    ID_Operator INT PRIMARY KEY,
+    Nama VARCHAR(100),
+    Username VARCHAR(50),
+    Password VARCHAR(255), -- Gunakan fungsi hash untuk menyimpan password
+    Level VARCHAR(20),
+    Login_Terakhir DATETIME
+);
+
+-- Tabel Status Servis
+CREATE TABLE tb_status_servis (
+    ID_Status INT PRIMARY KEY,
+    Nama_Status VARCHAR(100) -- Contoh: Selesai, Pending, Dalam Proses
+);
+
+-- Tabel Transaksi Penjualan
+CREATE TABLE tb_transaksi_penjualan (
+    ID_Transaksi_Penjualan INT PRIMARY KEY,
+    Faktur VARCHAR(100),
+    Tanggal DATETIME,
+    ID_Pelanggan INT,
+    ID_Operator INT,
+    Total_Penjualan DECIMAL(10, 2),
+    FOREIGN KEY (ID_Pelanggan) REFERENCES tb_pelanggan(ID_Pelanggan),
+    FOREIGN KEY (ID_Operator) REFERENCES tb_operator_sistem(ID_Operator)
+);
+
+-- Tabel Transaksi Servis
+CREATE TABLE tb_transaksi_servis (
+    ID_Transaksi_Servis INT PRIMARY KEY,
+    Faktur VARCHAR(100),
+    Tanggal DATETIME,
+    ID_Pelanggan INT,
+    ID_Operator INT,
+    ID_Status INT,
+    Total_Biaya DECIMAL(10, 2),
+    FOREIGN KEY (ID_Pelanggan) REFERENCES tb_pelanggan(ID_Pelanggan),
+    FOREIGN KEY (ID_Operator) REFERENCES tb_operator_sistem(ID_Operator),
+    FOREIGN KEY (ID_Status) REFERENCES tb_status_servis(ID_Status)
+);
+
+-- Tabel Transaksi Piutang
+CREATE TABLE tb_transaksi_piutang (
+    ID_Transaksi_Piutang INT PRIMARY KEY,
+    Faktur VARCHAR(100),
+    Tanggal DATETIME,
+    ID_Operator INT,
+    Total_Hutang DECIMAL(10, 2),
+    Total_Pembayaran DECIMAL(10, 2),
+    Sisa_Hutang DECIMAL(10, 2),
+    FOREIGN KEY (ID_Operator) REFERENCES tb_operator_sistem(ID_Operator)
+);
+
+-- Tabel Laporan Penjualan
+CREATE TABLE tb_laporan_penjualan (
+    ID_Laporan_Penjualan INT PRIMARY KEY,
+    Tanggal DATE,
+    ID_Transaksi_Penjualan INT,
+    ID_Pelanggan INT,
+    ID_Operator INT,
+    Total_Transaksi DECIMAL(10, 2),
+    FOREIGN KEY (ID_Transaksi_Penjualan) REFERENCES tb_transaksi_penjualan(ID_Transaksi_Penjualan),
+    FOREIGN KEY (ID_Pelanggan) REFERENCES tb_pelanggan(ID_Pelanggan),
+    FOREIGN KEY (ID_Operator) REFERENCES tb_operator_sistem(ID_Operator)
+);
+
+-- Tabel Laporan Servis
+CREATE TABLE tb_laporan_servis (
+    ID_Laporan_Servis INT PRIMARY KEY,
+    Tanggal DATE,
+    ID_Transaksi_Servis INT,
+    ID_Pelanggan INT,
+    ID_Operator INT,
+    Total_Biaya DECIMAL(10, 2),
+    FOREIGN KEY (ID_Transaksi_Servis) REFERENCES tb_transaksi_servis(ID_Transaksi_Servis),
+    FOREIGN KEY (ID_Pelanggan) REFERENCES tb_pelanggan(ID_Pelanggan),
+    FOREIGN KEY (ID_Operator) REFERENCES tb_operator_sistem(ID_Operator)
+);
+
+-- Tabel Laporan Piutang
+CREATE TABLE tb_laporan_piutang (
+    ID_Laporan_Piutang INT PRIMARY KEY,
+    Tanggal DATE,
+    ID_Transaksi_Piutang INT,
+    ID_Operator INT,
+    Total_Hutang DECIMAL(10, 2),
+    Sisa_Hutang DECIMAL(10, 2),
+    FOREIGN KEY (ID_Transaksi_Piutang) REFERENCES tb_transaksi_piutang(ID_Transaksi_Piutang),
+    FOREIGN KEY (ID_Operator) REFERENCES tb_operator_sistem(ID_Operator)
+);

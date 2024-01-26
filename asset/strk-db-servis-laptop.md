@@ -22,10 +22,15 @@ Harga_Modal (DECIMAL(10, 2))
 Harga_Jual (DECIMAL(10, 2))
 Stok (INT)
 
-Tabel Data Barang Servis (tb_data_barang_servis):
+Tabel Data Barang Servis (tb_data_barang_servis): !
 ID_Service (INT, Primary Key)
 Serial_Barang (VARCHAR(100))
 Tipe_Barang (VARCHAR(100))
+Id_Barang INT,
+Tanggal_Masuk DATE,
+Kondisi_Barang VARCHAR(255),
+Kelengkapan_Barang VARCHAR(255),
+solusi VARCHAR(255),
 
 Tabel Pelanggan (tb_pelanggan):
 ID_Pelanggan (INT, Primary Key)

@@ -23,7 +23,7 @@ $db = new Database();
                     <input type="date" class="form-control" name="Tanggal" id="Tanggal" placeholder="Masukkan Tanggal" />
                 </div>
                 <div class="form-group">
-                    <label for="ID_Pelanggan">ID Pelanggan</label>
+                    <label for="ID_Pelanggan">Pelanggan</label>
                     <select class="form-control" name="ID_Pelanggan" id="ID_Pelanggan" required>
                         <option value="">Pilih Pelanggan</option>
                         <?php
@@ -39,7 +39,7 @@ $db = new Database();
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="ID_Operator">ID Operator</label>
+                    <label for="ID_Operator">Operator</label>
                     <select class="form-control" name="ID_Operator" id="ID_Operator" required>
                         <option value="">Pilih Operator</option>
                         <?php
@@ -53,6 +53,10 @@ $db = new Database();
                         }
                         ?>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="Total_Penjualan">Total Penjualan</label>
+                    <input type="text" class="form-control" name="Total_Penjualan" id="Total_Penjualan" placeholder="Masukkan Total Penjualan" />
                 </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <a href="../tampil/transaksi-penjualan.index.php" class="btn btn-secondary">Batal</a>

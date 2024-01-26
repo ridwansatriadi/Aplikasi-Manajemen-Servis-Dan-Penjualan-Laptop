@@ -16,7 +16,11 @@ include("../koneksi-db/config.php");
                 </div>
                 <div class="form-group">
                     <label for="Username">Username</label>
-                    <input type="text" class="form-control" name="Username" id="v" placeholder="Masukan Username" />
+                    <input type="text" class="form-control" name="Username" id="Username" placeholder="Masukan Username" />
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="text" class="form-control" name="Password" id="Password" placeholder="Masukan Password" />
                 </div>
                 <div class="form-group">
                     <label for="Level">Level</label>

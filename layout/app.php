@@ -305,8 +305,9 @@
                             <a href="#" class="nav-link has-dropdown"><i
                                     class="fas fa-fire"></i><span>Laporan</span></a>
                             <ul class="dropdown-menu" style="display: block;">
-                                <li class="active"><a class="nav-link" href="../tampil/laporan.index.php">Laporan
-                                        Penjualan</a></li>
+                                <li class="active"><a class="nav-link" href="../tampil/laporan-penjualan.index.php">Laporan Penjualan</a></li>
+                                <li class="active"><a class="nav-link" href="../tampil/laporan-servis.index.php">Laporan Servis</a></li>
+                                <li class="active"><a class="nav-link" href="../tampil/laporan-piutang.index.php">Laporan Piutang</a></li>
                                 <!-- <li><a class="nav-link" href="../tampil/transaksi-servis.index.php">Servis</a></li>
                                 <li><a class="nav-link" href="../tampil/transaksi-piutang.index.php">Piutang</a></li> -->
                             </ul>

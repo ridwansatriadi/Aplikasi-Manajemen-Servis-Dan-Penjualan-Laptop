@@ -17,8 +17,7 @@ include("../layout/app.php");
                     <input type="hidden" name="ID_Operator" value="<?php echo $d['ID_Operator'] ?>">
                     <div class="form-group">
                         <label for="Nama">Nama Lengkap</label>
-                        <input type="text" class="form-control" name="Nama" id="Nama"
-                            value="<?php echo $d['Nama'] ?>">
+                        <input type="text" class="form-control" name="Nama" id="Nama" value="<?php echo $d['Nama'] ?>">
                     </div>
                     <div class="form-group">
                         <label for="Username">Username</label>
@@ -26,13 +25,18 @@ include("../layout/app.php");
                             value="<?php echo $d['Username'] ?>">
                     </div>
                     <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="text" class="form-control" name="Password" id="Password"
+                            value="<?php echo $d['Password'] ?>">
+                    </div>
+
+                    <div class="form-group">
                         <label for="Level">Level</label>
-                        <input type="text" class="form-control" name="Level" id="Level"
-                            value="<?php echo $d['Level'] ?>">
+                        <input type="text" class="form-control" name="Level" id="Level" value="<?php echo $d['Level'] ?>">
                     </div>
                     <div class="form-group">
                         <label for="Login_Terakhir">Login Terakhir</label>
-                        <input type="datetime" class="form-control" name="Login_Terakhir" id="Login_Terakhir"
+                        <input type="dateme" class="form-control" name="Login_Terakhir" id="Login_Terakhir"
                             value="<?php echo $d['Login_Terakhir'] ?>">
                     </div>
                     <button type="submit" class="btn btn-primary">Update</button>
@@ -47,4 +51,3 @@ include("../layout/app.php");
 <?php
 include("../layout/footer.php");
 ?>
-

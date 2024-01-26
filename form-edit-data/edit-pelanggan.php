@@ -30,6 +30,11 @@ include("../layout/app.php");
                         <input type="number" class="form-control" name="Kontak" id="Kontak"
                             value="<?php echo $d['Kontak'] ?>">
                     </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="text" class="form-control" name="Email" id="Email"
+                            value="<?php echo $d['Email'] ?>">
+                    </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                     <a href="../tampil/pelanggan.index.php" class="btn btn-secondary">Batal</a>
                 </form>

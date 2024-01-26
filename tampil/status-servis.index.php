@@ -21,16 +21,19 @@ $db = new Database();
                             <th>Opsi</th>
                         </tr>
                         <tr>
-                            <?php
+                        <?php
                             $data = 1;
-                            foreach ($db->tampil_status_servis() as $x) {
-                                ?>
+                            $result = $db->tampil_status_servis();
+
+                            if (is_array($result) || is_object($result)) {
+                                foreach ($result as $x) {
+                                    ?>
                             <tr>
                                 <td>
                                     <?php echo $data++; ?>
                                 </td>
                                 <td>
-                                    <?php echo $x['Status']; ?>
+                                    <?php echo $x['Nama_Status']; ?>
                                 </td>
                                 <td>
                                     <a href="../form-edit-data/edit-status-servis.php?id=<?php echo $x['ID_Status']; ?>&aksi=edit" class="btn btn-warning btn-sm">Edit</a>
@@ -39,6 +42,9 @@ $db = new Database();
                                 </td>
                             </tr>
                             <?php
+                                }
+                            } else {
+                                echo "<tr><td colspan='6'>Tidak ada data Status</td></tr>";
                             }
                             ?>
                         </tr>

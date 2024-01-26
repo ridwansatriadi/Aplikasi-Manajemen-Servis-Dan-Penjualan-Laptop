@@ -4,11 +4,11 @@ $db = new Database();
 
 $aksi = $_GET['aksi'];
 if ($aksi == "tambah") {
-    $db->tambah_teknisi($_POST['Nama_Teknisi'], $_POST['Almat'], $_POST['no_telpon']);
+    $db->tambah_teknisi($_POST['Nama_Teknisi'], $_POST['Almat'], $_POST['No_Telpon'],  $_POST['Email']);
     header("location:../tampil/teknisi.index.php");
 
 } elseif ($aksi == 'update') {
-    $db->update_teknisi($_POST['ID_Teknisi'], $_POST['Nama_Teknisi'], $_POST['Almat'], $_POST['no_telpon']);
+    $db->update_teknisi($_POST['ID_Teknisi'], $_POST['Nama_Teknisi'], $_POST['Almat'], $_POST['No_Telpon'], $_POST['Email']);
     header("location:../tampil/teknisi.index.php");
 
 } elseif ($aksi == 'hapus') {

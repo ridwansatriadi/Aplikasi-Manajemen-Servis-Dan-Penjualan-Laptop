@@ -2,6 +2,11 @@
 include("../layout/app.php");
 include("../koneksi-db/config.php");
 $db = new Database();
+
+function formatRupiah($angka) {
+    $result = "Rp. " . number_format($angka, 0, ',', '.');
+    return $result;
+}
 ?>
 <title> Data Transaksi Servis | App Manajement Servis dan Penjualan Laptop</title>
 <div class="col-12 col-md-12 col-lg-12">
@@ -19,16 +24,21 @@ $db = new Database();
                             <th>No</th>
                             <th>Faktur</th>
                             <th>Tanggal</th>
-                            <th>ID_Pelanggan</th>
-                            <th>ID_Operator</th>
-                            <th>ID_Status</th>
+                            <th>Pelanggan</th>
+                            <th>Operator</th>
+                            <th>Status</th>
+                            <th>Total Biaya</th>
                             <th>Opsi</th>
                         </tr>
                         <tr>
-                            <?php
+                        <?php
                             $data = 1;
-                            foreach ($db->tampil_transaksi_servis() as $x) {
-                                ?>
+                            $result = $db->tampil_transaksi_servis_dngn_pelanggan_operator_status();
+
+                            if (is_array($result) || is_object($result)) {
+                                foreach ($result as $x) {
+                                    ?>
+                            
                             <tr>
                                 <td>
                                     <?php echo $data++; ?>
@@ -40,13 +50,16 @@ $db = new Database();
                                     <?php echo $x['Tanggal']; ?>
                                 </td>
                                 <td>
-                                    <?php echo $x['ID_Pelanggan']; ?>
+                                    <?php echo $x['Nama_Pelanggan']; ?>
                                 </td>
                                 <td>
-                                    <?php echo $x['ID_Operator']; ?>
+                                    <?php echo $x['Nama']; ?>
                                 </td>
                                 <td>
-                                    <?php echo $x['ID_Status']; ?>
+                                    <?php echo $x['Nama_Status']; ?>
+                                </td>
+                                <td>
+                                    <?php echo  $result = "Rp. " .number_format($x['Total_Biaya']); ?>
                                 </td>
                                 <td>
                                     <a href="../form-edit-data/edit-transaksi-servis.php?id=<?php echo $x['ID_Transaksi_Servis']; ?>&aksi=edit" class="btn btn-warning btn-sm">Edit</a>
@@ -55,6 +68,9 @@ $db = new Database();
                                 </td>
                             </tr>
                             <?php
+                                }
+                            } else {
+                                echo "<tr><td colspan='6'>Tidak ada data Status</td></tr>";
                             }
                             ?>
                         </tr>

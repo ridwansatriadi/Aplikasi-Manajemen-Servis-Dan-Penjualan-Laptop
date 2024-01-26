@@ -21,11 +21,15 @@ $db = new Database();
                             <th>Opsi</th>
                         </tr>
                         <tr>
-                            <?php
-                            $data = 1;
-                            foreach ($db->tampil_kategori_barang() as $x) {
-                                ?>
-                            <tr>
+
+                        <?php
+                        $data = 1;
+                        $result = $db->tampil_kategori_barang();
+
+                        if (is_array($result) || is_object($result)) {
+                            foreach ($result as $x) {
+                        ?>
+                       
                                 <td>
                                     <?php echo $data++; ?>
                                 </td>
@@ -38,6 +42,9 @@ $db = new Database();
                                 </td>
                             </tr>
                             <?php
+                                }
+                            } else {
+                                echo "<tr><td colspan='6'>Tidak ada data pelanggan</td></tr>";
                             }
                             ?>
                         </tr>

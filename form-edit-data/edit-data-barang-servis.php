@@ -20,11 +20,50 @@ include("../layout/app.php");
                         <input type="text" class="form-control" name="Serial_Barang" id="Serial_Barang"
                             value="<?php echo $d['Serial_Barang'] ?>">
                     </div>
+
+                    <div class="form-group">
+                        <label for="barang_id">Barang Servis</label>
+                        <select class="form-control" name="barang_id" id="barang_id">
+                            <?php
+                            // Lakukan kueri SQL untuk mengambil nilai dari tabel kategori
+                            $query = "SELECT ID_Barang, Nama_Barang FROM tb_barang";
+                            $result = $db->execute($query);
+
+                            // Loop untuk menambahkan setiap opsi ke dropdown
+                            while ($row = $result->fetch_assoc()) {
+                                $selected = ($row['ID_Barang'] == $d['barang_id']) ? 'selected' : '';
+                                echo '<option value="' . $row['ID_Barang'] . '" ' . $selected . '>' . $row['Nama_Barang'] . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+
                     <div class="form-group">
                         <label for="Tipe_Barang">Tipe Barang</label>
                         <input type="text" class="form-control" name="Tipe_Barang" id="Tipe_Barang"
                             value="<?php echo $d['Tipe_Barang'] ?>">
                     </div>
+                    <div class="form-group">
+                        <label for="Tanggal_Masuk">Tanggal Masuk</label>
+                        <input type="date" class="form-control" name="Tanggal_Masuk" id="Tanggal_Masuk"
+                            value="<?php echo $d['Tanggal_Masuk'] ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="Kondisi_Barang">Kondisi Barang</label>
+                        <input type="text" class="form-control" name="Kondisi_Barang" id="Kondisi_Barang"
+                            value="<?php echo $d['Kondisi_Barang'] ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="Kelengkapan_Barang">Kelengkapan Barang</label>
+                        <input type="text" class="form-control" name="Kelengkapan_Barang" id="Kelengkapan_Barang"
+                            value="<?php echo $d['Kelengkapan_Barang'] ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="solusi">solusi</label>
+                        <input type="text" class="form-control" name="solusi" id="solusi"
+                            value="<?php echo $d['solusi'] ?>">
+                    </div>
+                        
                     <button type="submit" class="btn btn-primary">Update</button>
                     <a href="../tampil/data-barang-servis.index.php" class="btn btn-secondary">Batal</a>
                 </form>

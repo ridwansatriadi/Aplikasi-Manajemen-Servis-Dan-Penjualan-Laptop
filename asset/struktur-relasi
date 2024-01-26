@@ -1,0 +1,72 @@
+# Tabel-tabel dalam skema basis data memiliki hubungan sebagai berikut:
+
+Tabel Kategori Barang (tb_kategori_barang):
+ID_Kategori (Kunci Utama)
+
+Tabel Barang (tb_barang):
+ID_Barang (Kunci Utama)
+ID_Kategori (Kunci Asing yang merujuk ke tb_kategori_barang.ID_Kategori)
+Hubungan: One-to-Many (Satu-ke-Banyak)
+Setiap kategori barang pada tb_kategori_barang dapat memiliki banyak barang pada tb_barang.
+
+Tabel Data Barang Servis (tb_data_barang_servis):
+ID_Service (Kunci Utama)
+ID_Barang (Kunci Asing yang merujuk ke tb_barang.ID_Barang)
+Hubungan: Many-to-One (Banyak-ke-Satu)
+Banyak data barang servis dapat terkait dengan satu barang pada tb_barang.
+
+Tabel Pelanggan (tb_pelanggan):
+ID_Pelanggan (Kunci Utama)
+
+Tabel Teknisi (tb_teknisi):
+ID_Teknisi (Kunci Utama)
+
+Tabel Operator Sistem (tb_operator_sistem):
+ID_Operator (Kunci Utama)
+
+Tabel Status Servis (tb_status_servis):
+ID_Status (Kunci Utama)
+
+Tabel Transaksi Penjualan (tb_transaksi_penjualan):
+ID_Transaksi_Penjualan (Kunci Utama)
+ID_Pelanggan (Kunci Asing yang merujuk ke tb_pelanggan.ID_Pelanggan)
+ID_Operator (Kunci Asing yang merujuk ke tb_operator_sistem.ID_Operator)
+Hubungan: Many-to-One (Banyak-ke-Satu)
+Banyak transaksi penjualan dapat terkait dengan satu pelanggan dan satu operator sistem.
+
+Tabel Transaksi Servis (tb_transaksi_servis):
+ID_Transaksi_Servis (Kunci Utama)
+ID_Pelanggan (Kunci Asing yang merujuk ke tb_pelanggan.ID_Pelanggan)
+ID_Operator (Kunci Asing yang merujuk ke tb_operator_sistem.ID_Operator)
+ID_Status (Kunci Asing yang merujuk ke tb_status_servis.ID_Status)
+Hubungan: Many-to-One (Banyak-ke-Satu)
+Banyak transaksi servis dapat terkait dengan satu pelanggan, satu operator sistem, dan satu status servis.
+
+Tabel Transaksi Piutang (tb_transaksi_piutang):
+ID_Transaksi_Piutang (Kunci Utama)
+ID_Operator (Kunci Asing yang merujuk ke tb_operator_sistem.ID_Operator)
+Hubungan: Many-to-One (Banyak-ke-Satu)
+Banyak transaksi piutang dapat terkait dengan satu operator sistem.
+
+Tabel Laporan Penjualan (tb_laporan_penjualan):
+ID_Laporan_Penjualan (Kunci Utama)
+ID_Transaksi_Penjualan (Kunci Asing yang merujuk ke tb_transaksi_penjualan.ID_Transaksi_Penjualan)
+ID_Pelanggan (Kunci Asing yang merujuk ke tb_pelanggan.ID_Pelanggan)
+ID_Operator (Kunci Asing yang merujuk ke tb_operator_sistem.ID_Operator)
+Hubungan: Many-to-One (Banyak-ke-Satu)
+Banyak laporan penjualan dapat terkait dengan satu transaksi penjualan, satu pelanggan, dan satu operator sistem.
+
+Tabel Laporan Servis (tb_laporan_servis):
+ID_Laporan_Servis (Kunci Utama)
+ID_Transaksi_Servis (Kunci Asing yang merujuk ke tb_transaksi_servis.ID_Transaksi_Servis)
+ID_Pelanggan (Kunci Asing yang merujuk ke tb_pelanggan.ID_Pelanggan)
+ID_Operator (Kunci Asing yang merujuk ke tb_operator_sistem.ID_Operator)
+Hubungan: Many-to-One (Banyak-ke-Satu)
+Banyak laporan servis dapat terkait dengan satu transaksi servis, satu pelanggan, dan satu operator sistem.
+
+Tabel Laporan Piutang (tb_laporan_piutang):
+ID_Laporan_Piutang (Kunci Utama)
+ID_Transaksi_Piutang (Kunci Asing yang merujuk ke tb_transaksi_piutang.ID_Transaksi_Piutang)
+ID_Operator (Kunci Asing yang merujuk ke tb_operator_sistem.ID_Operator)
+Hubungan: Many-to-One (Banyak-ke-Satu)
+Banyak laporan piutang dapat terkait dengan satu transaksi piutang dan satu operator sistem.

@@ -26,9 +26,14 @@ include("../layout/app.php");
                             value="<?php echo $d['Almat'] ?>">
                     </div>
                     <div class="form-group">
-                        <label for="no_telpon">No Telpon</label>
-                        <input type="number" class="form-control" name="no_telpon" id="no_telpon"
-                            value="<?php echo $d['no_telpon'] ?>">
+                        <label for="No_Telpon">No Telpon</label>
+                        <input type="text" class="form-control" name="No_Telpon" id="No_Telpon"
+                            value="<?php echo $d['No_Telpon'] ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">No Telpon</label>
+                        <input type="text" class="form-control" name="Email" id="Email"
+                            value="<?php echo $d['Email'] ?>">
                     </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                     <a href="../tampil/teknisi.index.php" class="btn btn-secondary">Batal</a>

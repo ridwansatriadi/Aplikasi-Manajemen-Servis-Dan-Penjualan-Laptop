@@ -22,6 +22,10 @@ include("../koneksi-db/config.php");
                     <label for="Kontak">Kontak</label>
                     <input type="number" class="form-control" name="Kontak" id="Kontak" placeholder="Masukan Kontak" />
                 </div>
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="text" class="form-control" name="Email" id="Email" placeholder="Masukan Kontak" />
+                </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <a href="../tampil/pelanggan.index.php" class="btn btn-secondary">Batal</a>
             </form>

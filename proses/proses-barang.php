@@ -12,7 +12,7 @@ if ($aksi == "tambah") {
     header("location:../tampil/barang.index.php");
 
 } elseif ($aksi == 'hapus') {
-    $ID_Barang= $_GET['id'];
+    $ID_Barang = $_GET['id'];
     $db->delete_barang($_GET['id']);
     header("location:../tampil/barang.index.php");
 }

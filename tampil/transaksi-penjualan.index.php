@@ -2,6 +2,11 @@
 include("../layout/app.php");
 include("../koneksi-db/config.php");
 $db = new Database();
+
+function formatRupiah($angka) {
+    $result = "Rp. " . number_format($angka, 0, ',', '.');
+    return $result;
+}
 ?>
 <title> Data Transaksi Penjualan| App Manajement Servis dan Penjualan Laptop</title>
 <div class="col-12 col-md-12 col-lg-12">
@@ -19,8 +24,9 @@ $db = new Database();
                             <th>No</th>
                             <th>Faktur</th>
                             <th>Tanggal</th>
-                            <th>Nama Pelanggan</th>
+                            <th>Pelanggan</th>
                             <th>Operator</th>
+                            <th>Total Penjualan</th>
                             <th>Opsi</th>
                         </tr>
                         <tr>
@@ -43,6 +49,9 @@ $db = new Database();
                                 </td>
                                 <td>
                                     <?php echo $x['Nama']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $result = "Rp. " .number_format($x['Total_Penjualan'], 0, ',', '.'); ?>
                                 </td>
                                 <td>
                                     <a href="../form-edit-data/edit-transaksi-penjualan.php?id=<?php echo $x['ID_Transaksi_Penjualan']; ?>&aksi=edit" class="btn btn-warning btn-sm">Edit</a>

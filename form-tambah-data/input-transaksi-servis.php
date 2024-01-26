@@ -1,9 +1,12 @@
-
 <?php
 include("../layout/app.php");
 include("../koneksi-db/config.php");
+
+$db = new Database();
+
 ?>
-<title> Input Data Transaksi Servis | App Manajement Servis dan Penjualan Laptop<</title>
+
+<title>Input Data Transaksi Servis | App Manajemen Servis dan Penjualan Laptop</title>
 <div class="col-12 col-md-12 col-lg-12">
     <div class="card">
         <div class="card-header">
@@ -13,28 +16,67 @@ include("../koneksi-db/config.php");
             <form action="../proses/proses-transaksi-servis.php?aksi=tambah" method="post">
                 <div class="form-group">
                     <label for="Faktur">Faktur</label>
-                    <input type="text" class="form-control" name="Faktur" id="Faktur" placeholder="Masukan Faktur" />
+                    <input type="text" class="form-control" name="Faktur" id="Faktur" placeholder="Masukkan Faktur" />
                 </div>
                 <div class="form-group">
                     <label for="Tanggal">Tanggal</label>
-                    <input type="date" class="form-control" name="Tanggal" id="Tanggal" placeholder="Masukan Tanggal" />
+                    <input type="date" class="form-control" name="Tanggal" id="Tanggal" placeholder="Masukkan Tanggal" />
                 </div>
                 <div class="form-group">
-                    <label for="ID_Pelanggan">ID Pelanggan</label>
-                    <input type="number" class="form-control" name="ID_Pelanggan" id="ID_Pelanggan" placeholder="" />
+                    <label for="ID_Pelanggan">Pelanggan</label>
+                    <select class="form-control" name="ID_Pelanggan" id="ID_Pelanggan" required>
+                        <option value="">Pilih Pelanggan</option>
+                        <?php
+                        // Ambil nilai dari tabel tb_pelanggan
+                        $queryPelanggan = "SELECT ID_Pelanggan, Nama_Pelanggan FROM tb_pelanggan";
+                        $resultPelanggan = $db->execute($queryPelanggan);
+
+                        // Tambahkan setiap opsi ke dropdown
+                        while ($rowPelanggan = $resultPelanggan->fetch_assoc()) {
+                            echo '<option value="' . $rowPelanggan['ID_Pelanggan'] . '">' . $rowPelanggan['Nama_Pelanggan'] . '</option>';
+                        }
+                        ?>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="ID_Operator">ID Operator</label>
-                    <input type="number" class="form-control" name="ID_Operator" id="ID_Operator" placeholder="" />
+                    <label for="ID_Operator">Operator</label>
+                    <select class="form-control" name="ID_Operator" id="ID_Operator" required>
+                        <option value="">Pilih Operator</option>
+                        <?php
+                        // Ambil nilai dari tabel tb_operator
+                        $queryOperator = "SELECT ID_Operator, Nama FROM tb_operator_sistem";
+                        $resultOperator = $db->execute($queryOperator);
+
+                        // Tambahkan setiap opsi ke dropdown
+                        while ($rowOperator = $resultOperator->fetch_assoc()) {
+                            echo '<option value="' . $rowOperator['ID_Operator'] . '">' . $rowOperator['Nama'] . '</option>';
+                        }
+                        ?>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="ID_Status">ID Status</label>
-                    <input type="number" class="form-control" name="ID_Status" id="ID_Operator" placeholder="" />
+                    <label for="ID_Status">Operator</label>
+                    <select class="form-control" name="ID_Status" id="ID_Status" required>
+                        <option value="">Pilih Operator</option>
+                        <?php
+                        // Ambil nilai dari tabel tb_operator
+                        $queryOperator = "SELECT ID_Status, Nama_Status FROM tb_status_servis";
+                        $resultOperator = $db->execute($queryOperator);
+
+                        // Tambahkan setiap opsi ke dropdown
+                        while ($rowOperator = $resultOperator->fetch_assoc()) {
+                            echo '<option value="' . $rowOperator['ID_Status'] . '">' . $rowOperator['Nama_Status'] . '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Total_Penjualan">Total Penjualan</label>
+                    <input type="text" class="form-control" name="Total_Penjualan" id="Total_Penjualan" placeholder="Masukkan Total Penjualan" />
                 </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <a href="../tampil/transaksi-servis.index.php" class="btn btn-secondary">Batal</a>
             </form>
-
         </div>
     </div>
 </div>

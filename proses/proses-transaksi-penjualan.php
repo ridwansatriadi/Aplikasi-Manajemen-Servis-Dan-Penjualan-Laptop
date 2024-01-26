@@ -4,11 +4,11 @@ $db = new Database();
 
 $aksi = $_GET['aksi'];
 if ($aksi == "tambah") {
-    $db->tambah_transaksi_penjualan($_POST['Faktur'], $_POST['Tanggal'], $_POST['ID_Pelanggan'], $_POST['ID_Operator']);
+    $db->tambah_transaksi_penjualan($_POST['Faktur'], $_POST['Tanggal'], $_POST['ID_Pelanggan'], $_POST['ID_Operator'], $_POST['Total_Penjualan']);
     header("location:../tampil/transaksi-penjualan.index.php");
 
 } elseif ($aksi == 'update') {
-    $db->update_transaksi_penjualan($_POST['ID_Transaksi_Penjualan'], $_POST['Faktur'], $_POST['Tanggal'], $_POST['ID_Pelanggan'], $_POST['ID_Operator']);
+    $db->update_transaksi_penjualan($_POST['ID_Transaksi_Penjualan'], $_POST['Faktur'], $_POST['Tanggal'], $_POST['ID_Pelanggan'], $_POST['ID_Operator'], $_POST['Total_Penjualan']);
     header("location:../tampil/transaksi-penjualan.index.php");
 
 } elseif ($aksi == 'hapus') {

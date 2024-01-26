@@ -19,8 +19,12 @@ include("../koneksi-db/config.php");
                     <input type="text" class="form-control" name="Almat" id="Almat" placeholder="Masukan Alamat" />
                 </div>
                 <div class="form-group">
-                    <label for="no_telpon">No Telpon</label>
-                    <input type="number" class="form-control" name="no_telpon" id="no_telpon" placeholder="Masukan no telpon" />
+                    <label for="No_Telpon">No Telpon</label>
+                    <input type="text" class="form-control" name="No_Telpon" id="No_Telpon" placeholder="Masukan no telpon" />
+                </div>
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="text" class="form-control" name="Email" id="Email" placeholder="Masukan no telpon" />
                 </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <a href="../tampil/teknisi.index.php" class="btn btn-secondary">Batal</a>
