@@ -54,6 +54,10 @@ $db = new Database();
         </div>
     </div>
 </div>
+
+
 <?php
 include("../layout/footer.php");
 ?>
+
+
